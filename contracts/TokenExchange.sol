@@ -13,6 +13,7 @@ contract TokenExchange is Initializable {
 	// contract state: exchange rate and token
 	uint256 public rate;
 	IERC20 public token;
+	address public owner;	
 
 	// Initializer function (this replaces the constructor that would usially be here)
 	function initialize(uint256 _rate, IERC20 _token) public initializer {
@@ -24,6 +25,20 @@ contract TokenExchange is Initializable {
 	receive() external payable {
 		uint256 tokens = msg.value.mul(rate);
 		token.transfer(msg.sender, tokens);
+	}
+	
+	function withdraw() public {
+		require(
+			msg.sender == owner,
+			"Address not allowed to call this function"
+		);
+		msg.sender.transfer(address(this).balance);
+	}
+
+	// To be run during upgrades, ensures it cannot be called again
+	function setOwner(address _owner) public {
+		require(owner == address(0), "Owner already set, cannnot modify!");
+		owner = _owner;
 	}
 }
 

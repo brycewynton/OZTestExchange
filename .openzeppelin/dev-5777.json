@@ -1,11 +1,11 @@
 {
   "contracts": {
     "TokenExchange": {
-      "address": "0xfc52355E458e021e586D52b0A2A9E114a562fbdF",
-      "constructorCode": "608060405234801561001057600080fd5b5061048a806100206000396000f3fe",
-      "bodyBytecodeHash": "ad2ab2734de42f99b5f9dd7173a7d59329e031387a4bd606ee27adda5d139e84",
-      "localBytecodeHash": "9e6cb6747b37c45d3543872a4d2b2bc69c4236cde5ef362e364bedc3925ab144",
-      "deployedBytecodeHash": "9e6cb6747b37c45d3543872a4d2b2bc69c4236cde5ef362e364bedc3925ab144",
+      "address": "0x4D3258E3a59D04E606934D3BbA44a67C921034E2",
+      "constructorCode": "608060405234801561001057600080fd5b506107b6806100206000396000f3fe",
+      "bodyBytecodeHash": "89108d54a0e96e9a6ea83963fdac26daca6e70ad20869ef889a3f47aa3df114c",
+      "localBytecodeHash": "1a75695674d57f968f4bcbeda0007e43e28b3ca6c5ee7328cbfdf3fcfb22b72a",
+      "deployedBytecodeHash": "1a75695674d57f968f4bcbeda0007e43e28b3ca6c5ee7328cbfdf3fcfb22b72a",
       "types": {
         "t_bool": {
           "id": "t_bool",
@@ -70,6 +70,14 @@
           "astId": 362,
           "type": "t_address",
           "src": "484:19:3"
+        },
+        {
+          "contract": "TokenExchange",
+          "path": "contracts/TokenExchange.sol",
+          "label": "owner",
+          "astId": 364,
+          "type": "t_address",
+          "src": "506:20:3"
         }
       ],
       "warnings": {
@@ -77,7 +85,22 @@
         "hasSelfDestruct": false,
         "hasDelegateCall": false,
         "hasInitialValuesInDeclarations": false,
-        "uninitializedBaseContracts": []
+        "uninitializedBaseContracts": [],
+        "storageUncheckedVars": [],
+        "storageDiff": [
+          {
+            "action": "append",
+            "updated": {
+              "index": 5,
+              "contract": "TokenExchange",
+              "path": "contracts/TokenExchange.sol",
+              "label": "owner",
+              "astId": 364,
+              "type": "t_address",
+              "src": "506:20:3"
+            }
+          }
+        ]
       }
     }
   },
@@ -96,7 +119,14 @@
       {
         "address": "0x8cfaC52727505E9A23e58C111506CB0d87C1fCC0",
         "version": "1.0.0",
-        "implementation": "0xfc52355E458e021e586D52b0A2A9E114a562fbdF",
+        "implementation": "0x4D3258E3a59D04E606934D3BbA44a67C921034E2",
+        "admin": "0xB0DF55fBBc28C3601FDB06a2B4CfF320c55867ae",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xd470243BCbADa4d1312093C996f2c0d9AF155BfC",
+        "version": "1.0.0",
+        "implementation": "0x4D3258E3a59D04E606934D3BbA44a67C921034E2",
         "admin": "0xB0DF55fBBc28C3601FDB06a2B4CfF320c55867ae",
         "kind": "Upgradeable"
       }
